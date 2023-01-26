@@ -20,6 +20,7 @@
 		A59E141F2982619300F1B317 /* QuizzlerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E141E2982619300F1B317 /* QuizzlerUITestsLaunchTests.swift */; };
 		A59E142D2982693000F1B317 /* LabelProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E142C2982693000F1B317 /* LabelProperty.swift */; };
 		A59E142F2982778B00F1B317 /* ButtonProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E142E2982778B00F1B317 /* ButtonProperty.swift */; };
+		A59E143129827D6100F1B317 /* ImageViewProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E143029827D6100F1B317 /* ImageViewProperty.swift */; };
 		B2CBF752A562BAB87A2A7109 /* Pods_QuizzlerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 168737F14666432A541E60A8 /* Pods_QuizzlerTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		A59E141E2982619300F1B317 /* QuizzlerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzlerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A59E142C2982693000F1B317 /* LabelProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelProperty.swift; sourceTree = "<group>"; };
 		A59E142E2982778B00F1B317 /* ButtonProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonProperty.swift; sourceTree = "<group>"; };
+		A59E143029827D6100F1B317 /* ImageViewProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewProperty.swift; sourceTree = "<group>"; };
 		EA27FE9267C81F4C9860C877 /* Pods-QuizzlerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizzlerTests.debug.xcconfig"; path = "Target Support Files/Pods-QuizzlerTests/Pods-QuizzlerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EAE6C94EBFBBDDA3A283F818 /* Pods_Quizzler_QuizzlerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quizzler_QuizzlerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -167,6 +169,7 @@
 			children = (
 				A59E142C2982693000F1B317 /* LabelProperty.swift */,
 				A59E142E2982778B00F1B317 /* ButtonProperty.swift */,
+				A59E143029827D6100F1B317 /* ImageViewProperty.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				A59E14002982619200F1B317 /* ViewController.swift in Sources */,
 				A59E13FC2982619200F1B317 /* AppDelegate.swift in Sources */,
 				A59E142F2982778B00F1B317 /* ButtonProperty.swift in Sources */,
+				A59E143129827D6100F1B317 /* ImageViewProperty.swift in Sources */,
 				A59E13FE2982619200F1B317 /* SceneDelegate.swift in Sources */,
 				A59E142D2982693000F1B317 /* LabelProperty.swift in Sources */,
 			);
