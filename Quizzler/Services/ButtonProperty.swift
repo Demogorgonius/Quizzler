@@ -11,4 +11,5 @@ import UIKit
 struct ButtonProperty {
     let buttonFrame: CGRect = CGRect(x: 0, y: 0, width: 374, height: 80)
     let buttonFont: UIFont = UIFont.systemFont(ofSize: 25.0, weight: .regular)
+    let buttonBackgroundImage: UIImage = #imageLiteral(resourceName: "Rectangle")
 }

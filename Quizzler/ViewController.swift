@@ -13,9 +13,29 @@ class ViewController: UIViewController {
     
 //MARK: - View/StackView
     
+    
+    
 //MARK: - Buttons
     lazy var trueButton: UIButton = {
-        let button = UIButton(frame: <#T##CGRect#>)
+        let button = UIButton(frame: ButtonProperty().buttonFrame)
+        button.titleLabel?.text = "True"
+        button.titleLabel?.font = ButtonProperty().buttonFont
+        button.titleLabel?.textColor = .white
+        button.setBackgroundImage(ButtonProperty().buttonBackgroundImage, for: .normal)
+        button.addTarget(self, action: #selector(trueButtonPressed), for: .touchUpInside)
+        
+        return button
+    }()
+    
+    lazy var falseButton: UIButton = {
+        let button = UIButton(frame: ButtonProperty().buttonFrame)
+        button.titleLabel?.text = "False"
+        button.titleLabel?.font = ButtonProperty().buttonFont
+        button.titleLabel?.textColor = .white
+        button.setBackgroundImage(ButtonProperty().buttonBackgroundImage, for: .normal)
+        button.addTarget(self, action: #selector(trueButtonPressed), for: .touchUpInside)
+        
+        return button
     }()
     
 //MARK: - Labels
@@ -37,7 +57,13 @@ class ViewController: UIViewController {
     }
     
 //MARK: - Methods
+    @objc func trueButtonPressed(_ sender: UIButton!) {
+        
+    }
     
+    @objc func falseButtonPressed(_ sender: UIButton!) {
+        
+    }
 
 
 }
