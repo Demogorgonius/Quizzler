@@ -18,25 +18,13 @@ class ViewController: UIViewController {
         stackView.axis = .vertical
         stackView.spacing = 10.0
         stackView.alignment = .fill
-        stackView.distribution = .fillEqually
-        [questionLabel,
-         backgroundImageView].forEach {
+        stackView.contentMode = .scaleToFill
+        stackView.distribution = .fillProportionally
+        [self.questionLabel,
+         self.trueButton,
+         self.falseButton,
+         self.progressView].forEach {
             stackView.addArrangedSubview($0)
-        }
-        return stackView
-    }()
-    
-    lazy var buttonsStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = 10.0
-        stackView.alignment = .fill
-        stackView.distribution = .fillEqually
-        [ self.trueButton,
-          self.falseButton,
-          self.progressView].forEach {
-            stackView.addArrangedSubview($0)
-            
         }
         return stackView
     }()
@@ -52,17 +40,18 @@ class ViewController: UIViewController {
     lazy var backgroundImageView: UIImageView = {
         let imageView = UIImageView(frame: BackgroundImageViewProperty().frame)
         imageView.image = BackgroundImageViewProperty().image
-        imageView.addSubview(buttonsStackView)
         return imageView
     }()
     
 //MARK: - Buttons
+    
+        
     lazy var trueButton: UIButton = {
         let button = UIButton(frame: ButtonProperty().buttonFrame)
-        button.titleLabel?.text = "True"
+        button.setBackgroundImage(ButtonProperty().buttonBackgroundImage, for: .normal)
+        button.setTitle("True", for: .normal)
         button.titleLabel?.font = ButtonProperty().buttonFont
         button.titleLabel?.textColor = .white
-        button.setBackgroundImage(ButtonProperty().buttonBackgroundImage, for: .normal)
         button.addTarget(self, action: #selector(trueButtonPressed), for: .touchUpInside)
         
         return button
@@ -70,10 +59,10 @@ class ViewController: UIViewController {
     
     lazy var falseButton: UIButton = {
         let button = UIButton(frame: ButtonProperty().buttonFrame)
-        button.titleLabel?.text = "False"
+        button.setBackgroundImage(ButtonProperty().buttonBackgroundImage, for: .normal)
+        button.setTitle("False", for: .normal)
         button.titleLabel?.font = ButtonProperty().buttonFont
         button.titleLabel?.textColor = .white
-        button.setBackgroundImage(ButtonProperty().buttonBackgroundImage, for: .normal)
         button.addTarget(self, action: #selector(trueButtonPressed), for: .touchUpInside)
         
         return button
@@ -107,7 +96,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.1923559308, green: 0.2327082157, blue: 0.3624993563, alpha: 1)
+        view.addSubview(backgroundImageView)
         view.addSubview(verticalStackView)
+       
         makeConstraints()
         
     }
@@ -125,26 +116,61 @@ class ViewController: UIViewController {
     
     func makeConstraints() {
         
-        verticalStackView.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.centerX.equalToSuperview()
+        verticalStackView.snp.makeConstraints { (make) in
             make.height.equalToSuperview()
+            make.width.equalToSuperview()
             make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+ 
         }
+
         
-        buttonsStackView.snp.makeConstraints { make in
-            make.centerX.equalTo(backgroundImageView)
-            make.centerY.equalTo(backgroundImageView)
-            make.height.equalTo(backgroundImageView)
-            make.width.equalTo(backgroundImageView)
+        backgroundImageView.snp.makeConstraints { (make) in
+            make.bottom.equalToSuperview()
+            make.height.equalTo(102)
+            make.width.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
         }
         
         progressBar.snp.makeConstraints { (make) in
-            make.centerX.equalTo(progressView)
+ 
             make.centerY.equalTo(progressView)
-            make.leading.equalTo(progressView).offset(15)
+            make.leading.equalTo(verticalStackView).offset(15)
+            make.trailing.equalTo(verticalStackView).offset(-15)
             make.height.equalTo(10)
         }
+
+        questionLabel.snp.makeConstraints { make in
+            make.height.equalTo(614)
+            make.width.equalTo(verticalStackView).offset(-15)
+            
+        }
+        
+        trueButton.snp.makeConstraints { (make) in
+            make.height.equalTo(80)
+            make.trailing.equalToSuperview().offset(-15)
+            make.leading.equalToSuperview().offset(15)
+            make.centerX.equalTo(verticalStackView)
+        }
+        
+        falseButton.snp.makeConstraints { (make) in
+            make.height.equalTo(80)
+            make.trailing.equalToSuperview().offset(-15)
+            make.leading.equalToSuperview().offset(15)
+            make.centerX.equalTo(verticalStackView)
+        }
+        
+        progressView.snp.makeConstraints { (make) in
+            make.height.equalTo(80)
+            make.trailing.equalToSuperview().offset(-15)
+            make.leading.equalToSuperview().offset(15)
+            make.centerX.equalTo(verticalStackView)
+        }
+        
+
         
     }
     
