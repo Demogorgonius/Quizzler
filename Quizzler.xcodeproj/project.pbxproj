@@ -22,6 +22,7 @@
 		A59E142F2982778B00F1B317 /* ButtonProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E142E2982778B00F1B317 /* ButtonProperty.swift */; };
 		A59E143129827D6100F1B317 /* ImageViewProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E143029827D6100F1B317 /* ImageViewProperty.swift */; };
 		A59E14332987A6F800F1B317 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E14322987A6F800F1B317 /* Question.swift */; };
+		A59E14382988FB8900F1B317 /* QuizzBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E14372988FB8900F1B317 /* QuizzBrain.swift */; };
 		B2CBF752A562BAB87A2A7109 /* Pods_QuizzlerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 168737F14666432A541E60A8 /* Pods_QuizzlerTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		A59E142E2982778B00F1B317 /* ButtonProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonProperty.swift; sourceTree = "<group>"; };
 		A59E143029827D6100F1B317 /* ImageViewProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewProperty.swift; sourceTree = "<group>"; };
 		A59E14322987A6F800F1B317 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		A59E14372988FB8900F1B317 /* QuizzBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzBrain.swift; sourceTree = "<group>"; };
 		EA27FE9267C81F4C9860C877 /* Pods-QuizzlerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizzlerTests.debug.xcconfig"; path = "Target Support Files/Pods-QuizzlerTests/Pods-QuizzlerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EAE6C94EBFBBDDA3A283F818 /* Pods_Quizzler_QuizzlerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quizzler_QuizzlerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -137,11 +139,12 @@
 		A59E13FA2982619200F1B317 /* Quizzler */ = {
 			isa = PBXGroup;
 			children = (
+				A59E14352988FA9000F1B317 /* Model */,
+				A59E14342988FA7600F1B317 /* View */,
+				A59E14362988FADA00F1B317 /* Controller */,
 				A59E142B2982690B00F1B317 /* Services */,
 				A59E13FB2982619200F1B317 /* AppDelegate.swift */,
 				A59E13FD2982619200F1B317 /* SceneDelegate.swift */,
-				A59E13FF2982619200F1B317 /* ViewController.swift */,
-				A59E14012982619200F1B317 /* Main.storyboard */,
 				A59E14042982619300F1B317 /* Assets.xcassets */,
 				A59E14062982619300F1B317 /* LaunchScreen.storyboard */,
 				A59E14092982619300F1B317 /* Info.plist */,
@@ -172,9 +175,33 @@
 				A59E142C2982693000F1B317 /* LabelProperty.swift */,
 				A59E142E2982778B00F1B317 /* ButtonProperty.swift */,
 				A59E143029827D6100F1B317 /* ImageViewProperty.swift */,
-				A59E14322987A6F800F1B317 /* Question.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		A59E14342988FA7600F1B317 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A59E14012982619200F1B317 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A59E14352988FA9000F1B317 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A59E14322987A6F800F1B317 /* Question.swift */,
+				A59E14372988FB8900F1B317 /* QuizzBrain.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A59E14362988FADA00F1B317 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A59E13FF2982619200F1B317 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		E96C31ACF3EFA5092246FA9C /* Frameworks */ = {
@@ -446,6 +473,7 @@
 			files = (
 				A59E14002982619200F1B317 /* ViewController.swift in Sources */,
 				A59E13FC2982619200F1B317 /* AppDelegate.swift in Sources */,
+				A59E14382988FB8900F1B317 /* QuizzBrain.swift in Sources */,
 				A59E142F2982778B00F1B317 /* ButtonProperty.swift in Sources */,
 				A59E143129827D6100F1B317 /* ImageViewProperty.swift in Sources */,
 				A59E13FE2982619200F1B317 /* SceneDelegate.swift in Sources */,
