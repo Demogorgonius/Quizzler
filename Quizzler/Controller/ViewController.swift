@@ -25,8 +25,9 @@ class ViewController: UIViewController {
         stackView.distribution = .fillProportionally
         [self.scoreLabel,
          self.questionLabel,
-         self.trueButton,
-         self.falseButton,
+         self.firstButton,
+         self.secondButton,
+         self.thirdButton,
          self.progressView].forEach {
             stackView.addArrangedSubview($0)
         }
@@ -50,10 +51,10 @@ class ViewController: UIViewController {
     //MARK: - Buttons
     
     
-    lazy var trueButton: UIButton = {
+    lazy var firstButton: UIButton = {
         let button = UIButton(frame: ButtonProperty().buttonFrame)
         button.setBackgroundImage(ButtonProperty().buttonBackgroundImage, for: .normal)
-        button.setTitle("True", for: .normal)
+        button.setTitle("One", for: .normal)
         button.titleLabel?.font = ButtonProperty().buttonFont
         button.titleLabel?.textColor = .white
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
@@ -61,14 +62,24 @@ class ViewController: UIViewController {
         return button
     }()
     
-    lazy var falseButton: UIButton = {
+    lazy var secondButton: UIButton = {
         let button = UIButton(frame: ButtonProperty().buttonFrame)
         button.setBackgroundImage(ButtonProperty().buttonBackgroundImage, for: .normal)
-        button.setTitle("False", for: .normal)
+        button.setTitle("Two", for: .normal)
         button.titleLabel?.font = ButtonProperty().buttonFont
         button.titleLabel?.textColor = .white
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         
+        return button
+    }()
+    
+    lazy var thirdButton: UIButton = {
+        let button: UIButton = UIButton(frame: ButtonProperty().buttonFrame)
+        button.setBackgroundImage(ButtonProperty().buttonBackgroundImage, for: .normal)
+        button.setTitle("Three", for: .normal)
+        button.titleLabel?.font = ButtonProperty().buttonFont
+        button.titleLabel?.textColor = .white
+        button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -142,8 +153,15 @@ class ViewController: UIViewController {
     
     @objc func updateUI () {
         
-        falseButton.backgroundColor = UIColor.clear
-        trueButton.backgroundColor = UIColor.clear
+        firstButton.backgroundColor = UIColor.clear
+        firstButton.setTitle(quizzBrain.getAnswerLabel()[0], for: .normal)
+        
+        secondButton.backgroundColor = UIColor.clear
+        secondButton.setTitle(quizzBrain.getAnswerLabel()[1], for: .normal)
+        
+        thirdButton.backgroundColor = UIColor.clear
+        thirdButton.setTitle(quizzBrain.getAnswerLabel()[2], for: .normal)
+        
         questionLabel.text = quizzBrain.getQuestionText()
         progressBar.progress = quizzBrain.getProgress()
         scoreLabel.text = "Score: \(quizzBrain.userScore)"
@@ -191,14 +209,21 @@ class ViewController: UIViewController {
             
         }
         
-        trueButton.snp.makeConstraints { (make) in
+        firstButton.snp.makeConstraints { (make) in
             make.height.equalTo(80)
             make.trailing.equalToSuperview().offset(-15)
             make.leading.equalToSuperview().offset(15)
             make.centerX.equalTo(verticalStackView)
         }
         
-        falseButton.snp.makeConstraints { (make) in
+        secondButton.snp.makeConstraints { (make) in
+            make.height.equalTo(80)
+            make.trailing.equalToSuperview().offset(-15)
+            make.leading.equalToSuperview().offset(15)
+            make.centerX.equalTo(verticalStackView)
+        }
+        
+        thirdButton.snp.makeConstraints { (make) in
             make.height.equalTo(80)
             make.trailing.equalToSuperview().offset(-15)
             make.leading.equalToSuperview().offset(15)
